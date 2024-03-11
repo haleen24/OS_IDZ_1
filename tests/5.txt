@@ -1,0 +1,5 @@
+sOmE_wAvEs-FoR_ThIsPrOgRaMs;
+
+WhIlE(tRuE) {
+	nEw InT(1);
+}

@@ -1,0 +1,3 @@
+second file. there are some unique symbols: !$@$#^&*();
+1+1=2;
+(x^2)'=2*x;
