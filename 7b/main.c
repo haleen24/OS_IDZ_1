@@ -53,10 +53,7 @@ int main(int argc, char *argv[]) {
         close(f2w);
         close(desc1);
         close(desc2);
-        return 0;
-    }
-
-    if (fork() > 0) {
+    } else {
         char buff1[buff_size];
         char buff2[buff_size];
         int fr1 = open(fifo1, O_RDONLY);
@@ -75,23 +72,20 @@ int main(int argc, char *argv[]) {
         close(fr1);
         close(fr2);
         return 0;
-    } else {
-        char buff[buff_size];
-        int fr3 = open(fifo3, O_RDONLY);
-        if (fr3 == -1) {
-            printf("Failed: can not open FIFO\n");
-            exit(-1);
-        }
-        ssize_t size = read(fr3, buff, buff_size);
-        if (size == -1) {
-            printf("Failed: read from pipe\n");
-            exit(-1);
-        }
-
-        int desc = open(argv[3], O_WRONLY | O_CREAT, 0777);
-        write(desc, buff, size);
-        close(desc);
     }
-    exit(0);
+    char buff[buff_size];
+    int fr3 = open(fifo3, O_RDONLY);
+    if (fr3 == -1) {
+        printf("Failed: can not open FIFO\n");
+        exit(-1);
+    }
+    ssize_t size = read(fr3, buff, buff_size);
+    if (size == -1) {
+        printf("Failed: read from pipe\n");
+        exit(-1);
+    }
 
+    int desc = open(argv[3], O_WRONLY | O_CREAT, 0777);
+    write(desc, buff, size);
+    close(desc);
 }
