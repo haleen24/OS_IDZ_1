@@ -1,3 +1,0 @@
-/home/haleen/trash/OSCourse/idz/OS_IDZ_1/4b/cmake-build-debug/CMakeFiles/4b.dir
-/home/haleen/trash/OSCourse/idz/OS_IDZ_1/4b/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/haleen/trash/OSCourse/idz/OS_IDZ_1/4b/cmake-build-debug/CMakeFiles/rebuild_cache.dir
