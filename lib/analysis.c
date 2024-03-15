@@ -3,6 +3,7 @@
 #include <stdio.h>
 
 const int buff_size = 5000;
+const int small_buff_size = 128;
 
 char *analyze(const char *buff1, ssize_t len1, const char *buff2, ssize_t len2) {
     char *res = malloc(sizeof(char) * (buff_size + 1));
