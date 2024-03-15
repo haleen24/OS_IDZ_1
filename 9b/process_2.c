@@ -27,7 +27,7 @@ int main() {
 
     int fr = open(fifo1, O_RDONLY);
     if (fr == -1) {
-        printf("Failed: open fifo");
+        printf("Failed: can not open fifo");
         exit(-1);
     }
 

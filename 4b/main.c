@@ -44,7 +44,6 @@ int main(int argc, char *argv[]) {
         close(fd1[1]);
         close(fd2[1]);
 
- 
         close(desc1);
         close(desc2);
         return 0;
@@ -88,8 +87,7 @@ int main(int argc, char *argv[]) {
             printf("Failed: read from pipe\n");
             exit(-1);
         }
-
-        int desc = open(argv[4], O_WRONLY | O_CREAT, 0777);
+        int desc = open(argv[3], O_WRONLY | O_CREAT, 0777);
         write(desc, buff, size);
         close(desc);
         return 0;
